@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members Project Reflections</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #6a11cb;
+            margin: 0;
+        }
+
+        p.instructions {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #6a11cb;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        td a {
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+
+        td a::after {
+            content: attr(title);
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 5px;
+            border-radius: 5px;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        td a:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            width: 100%;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            th, td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            p.instructions {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Team Members Project Reflections</h1>
+    </header>
+
+    <p class="instructions">Click on the team member to know their Project Reflections</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sr. No</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="https://darshanrt.github.io/kaveri-vana-smart-city/course_reflections.html" target="_self" title="View Darshan Ramanjaneya Talawar's reflections">Darshan Ramanjaneya Talawar</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="https://erannatp.github.io/Portfolio/ProjectReflections.html" target="_self" title="View Eranna Patil's reflections">Eranna Patil</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="https://sagarmirje.github.io/Kaverivan-city-plan/cource%20reflection.html" target="_self" title="View Sagar Suresh Mirje's reflections">Sagar Suresh Mirje</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="https://vinaym0101.github.io/daaportfolio.github.io/course_reflections.html" target="_self" title="View Vinay Madgi's reflections">Vinay Madgi</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer>
+        &copy; 2024 Eranna Patil. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
