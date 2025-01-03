@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Code Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        pre {
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>C++ Code Example</h1>
+    <p>The following is a C++ code example:</p>
+
+    <pre><code>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+// Define the maximum size of the queue
+const int MAX_VEHICLES = 10;
+
+// Circular Queue class for traffic management
+class TrafficQueue {
+private:
+    string vehicles[MAX_VEHICLES]; // Array to store vehicle names
+    int front;  // Index of the front element
+    int rear;   // Index of the rear element
+    int size;   // Current size of the queue
+
+public:
+    // Constructor to initialize the queue
+    TrafficQueue() : front(-1), rear(-1), size(0) {}
+
+    // Check if the queue is empty
+    bool isEmpty() {
+        return size == 0;
+    }
+
+    // Check if the queue is full
+    bool isFull() {
+        return size == MAX_VEHICLES;
+    }
+
+    // Enqueue a vehicle into the queue
+    void enqueue(const string&amp; vehicle) {
+        if (isFull()) {
+            cout &lt;&lt; "Traffic queue is full! Cannot add more vehicles.\n";
+            return;
+        }
+        rear = (rear + 1) % MAX_VEHICLES;
+        vehicles[rear] = vehicle;
+        if (front == -1) front = 0;
+        size++;
+        cout &lt;&lt; vehicle &lt;&lt; " entered the traffic queue.\n";
+    }
+
+    // Dequeue a vehicle from the queue
+    void dequeue() {
+        if (isEmpty()) {
+            cout &lt;&lt; "Traffic queue is empty! No vehicles to remove.\n";
+            return;
+        }
+        cout &lt;&lt; vehicles[front] &lt;&lt; " left the traffic queue.\n";
+        front = (front + 1) % MAX_VEHICLES;
+        size--;
+        if (size == 0) { // Reset queue when empty
+            front = -1;
+            rear = -1;
+        }
+    }
+
+    // Display the current queue
+    void display() {
+        if (isEmpty()) {
+            cout &lt;&lt; "Traffic queue is empty.\n";
+            return;
+        }
+        cout &lt;&lt; "Current Traffic Queue: ";
+        for (int i = 0; i &lt; size; i++) {
+            cout &lt;&lt; vehicles[(front + i) % MAX_VEHICLES] &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+};
+
+// Main function to simulate the traffic management system
+int main() {
+    TrafficQueue trafficQueue;
+
+    trafficQueue.enqueue("Car");
+    trafficQueue.enqueue("Bus");
+    trafficQueue.enqueue("Truck");
+    trafficQueue.display();
+
+    trafficQueue.dequeue();
+    trafficQueue.display();
+
+    trafficQueue.enqueue("Bike");
+    trafficQueue.enqueue("Auto-Rickshaw");
+    trafficQueue.display();
+
+    return 0;
+}
+    </code></pre>
+</body>
+</html>
 
