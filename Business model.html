@@ -52,14 +52,28 @@
 
     <div class="container">
         <p>
-            The public transport network modernization aims to improve route efficiency, reduce travel times, and promote eco-friendly commuting. 
-            By applying <strong>BFS (Breadth-First Search)</strong> and <strong>DFS (Depth-First Search)</strong> algorithms, we can analyze and optimize transportation routes. 
-            BFS ensures that all nearby stops are explored systematically, enabling efficient travel planning and real-time tracking. 
-            DFS helps identify isolated or less connected stops and assesses deeper route structures for possible detours.
+            <strong>1. DFS (Depth-First Search):</strong> DFS explores all routes starting from a given stop by visiting each connected stop one at a time, backtracking when necessary. In a smart city, DFS helps simulate all possible routes for a bus or metro network, identifying alternative paths in case of disruptions or optimizing route planning.
         </p>
         <p>
-            This modernization ensures faster connectivity between stops, better resource allocation, and reduced environmental impact through optimized routes, 
-            benefiting both the commuters and the environment.
+            <strong>2. BFS (Breadth-First Search):</strong> BFS systematically explores the transport network level by level, ensuring the shortest path between stops. It’s useful in public transport for finding the quickest route between a start and destination stop, especially when the travel times or distances are uniform across routes (unweighted graphs).
+        </p>
+        <p>
+            <strong>3. Heap Sort:</strong> Heap Sort is used to efficiently sort elements based on priority. In rush-hour scheduling, it can manage the timing of buses, trains, or other transport resources based on passenger demand. By sorting in decreasing order of demand, it ensures that resources are allocated where they are needed most during peak hours.
+        </p>
+        <p>
+            <strong>4. Dijkstra's Algorithm:</strong> Dijkstra’s Algorithm finds the shortest path between two nodes in a weighted graph (e.g., roads with travel time or distance as weights). For last-mile connectivity, it can be used to plan the best route from a transport hub to a destination, considering various factors like traffic, road conditions, and transport options.
+        </p>
+        <p>
+            <strong>5. Prim’s Algorithm:</strong> Prim’s Algorithm builds a minimum spanning tree (MST), ensuring that all areas are connected at the lowest possible cost. In a smart city, it can be used to expand public transport networks, making sure all neighborhoods, including underserved areas, are connected to the main infrastructure while minimizing costs.
+        </p>
+        <p>
+            <strong>6. Arrays:</strong> Arrays store infrastructure data in a fixed-size format, enabling quick access and analysis. In sustainable infrastructure management, arrays can track resources like electricity, water, and waste management across different city sectors, helping with efficient allocation and maintenance.
+        </p>
+        <p>
+            <strong>7. Queues:</strong> Queues model traffic flow where vehicles or pedestrians are processed in the order they arrive. In a smart city, queues help manage traffic signals and pedestrian crossings, ensuring that cars and people move in a fair, efficient manner without unnecessary delays.
+        </p>
+        <p>
+            These algorithms and data structures, when applied to smart city infrastructure, improve efficiency, sustainability, and user experience, ensuring a more connected and optimized urban living.
         </p>
     </div>
 
