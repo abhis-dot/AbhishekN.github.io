@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Code Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        pre {
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>C++ Code Example</h1>
+    <p>The following is a C++ code example for Heap Sort:</p>
+
+    <pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+
+// Function to heapify a subtree rooted at index `i`
+void heapify(int arr[], int n, int i) {
+    int largest = i;         // Initialize the largest as root
+    int left = 2 * i + 1;    // Left child
+    int right = 2 * i + 2;   // Right child
+
+    // If left child is larger than the root
+    if (left &lt; n && arr[left] &gt; arr[largest])
+        largest = left;
+
+    // If right child is larger than the current largest
+    if (right &lt; n && arr[right] &gt; arr[largest])
+        largest = right;
+
+    // If the largest is not the root
+    if (largest != i) {
+        swap(arr[i], arr[largest]);  // Swap the root with the largest
+        heapify(arr, n, largest);   // Recursively heapify the affected subtree
+    }
+}
+
+// Function to perform Heap Sort
+void heapSort(int arr[], int n) {
+    // Build a max heap
+    for (int i = n / 2 - 1; i &gt;= 0; i--) {
+        heapify(arr, n, i);
+    }
+
+    // Extract elements one by one from the heap
+    for (int i = n - 1; i &gt; 0; i--) {
+        swap(arr[0], arr[i]);        // Move the current root to the end
+        heapify(arr, i, 0);          // Heapify the reduced heap
+    }
+}
+
+// Function to print the array
+void printArray(int arr[], int n) {
+    for (int i = 0; i &lt; n; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+}
+
+// Main function to demonstrate Heap Sort
+int main() {
+    int arr[] = {12, 11, 13, 5, 6, 7};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    cout &lt;&lt; "Original Array: ";
+    printArray(arr, n);
+
+    heapSort(arr, n);
+
+    cout &lt;&lt; "Sorted Array: ";
+    printArray(arr, n);
+
+    return 0;
+}
+    </code></pre>
+</body>
+</html>
+
